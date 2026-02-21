@@ -5,7 +5,6 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "google>=3.0.0",
     "grpcio>=1.78.0",
     "protobuf>=6.33.5",
 ]

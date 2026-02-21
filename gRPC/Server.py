@@ -5,7 +5,9 @@ import calculator_pb2_grpc
 
 class CalculatorServicer(calculator_pb2_grpc.CalculatorServicer):
     def Add(self, request, context):
+        print(f"Received request: number1={request.number1}, number2={request.number2}")
         result = request.number1 + request.number2
+        print(f"Sending response: result={result}")
         return calculator_pb2.AddResponse(result=result)
 
 def serve():
