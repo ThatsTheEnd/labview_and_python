@@ -45,7 +45,7 @@
 				<Property Name="Dll_headerGUID" Type="Str">{184E70F6-7887-4C7F-AA62-8DB37B087D20}</Property>
 				<Property Name="Dll_libGUID" Type="Str">{CE78D7DD-5692-4957-B54A-8D0BBF6F56EB}</Property>
 				<Property Name="Dll_privateExecSys" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{CCD7EDEA-1021-4D4D-8195-8A7C1016AEA5}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{0D818844-5BA0-44FE-97BA-ED637307146E}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].ExportedVI.VIProtoInfo[0]VIProtoDir" Type="Int">1</Property>

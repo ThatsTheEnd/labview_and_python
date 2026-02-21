@@ -11,7 +11,7 @@ base_dir = os.path.dirname(os.path.abspath(__file__))
 dll_path = os.path.join(base_dir, "bin", "LVFunctions.dll")
 module = ffi.dlopen(dll_path)
 
-name = ffi.new("char[]", b"Jan")
+name = ffi.new("char[]", b"NI Days 2026")
 
 OUTPUT_SIZE = 255
 output = ffi.new("char[]", OUTPUT_SIZE)
