@@ -5,8 +5,9 @@ import os
 
 current_file_path = os.path.dirname(os.path.abspath(__file__))
 vi_path = current_file_path + '\\test_with_connector_pane.vi'
-
+print("Dispatching LabVIEW")
 LabVIEW = win32com.client.Dispatch("Labview.Application.8")
+print("Getting VI reference")
 vi = LabVIEW.getvireference(vi_path)  # Path to LabVIEW VI
 vi._FlagAsMethod("Call2")  
 
@@ -21,7 +22,7 @@ param_values = VARIANT(
     pythoncom.VT_BYREF | pythoncom.VT_ARRAY | pythoncom.VT_VARIANT,
     (100, 200, 0)
 )
-
+print("Calling VI with parameters:", param_values)
 # Call the VI
 vi.Call2(param_names, param_values,
         True,   # open FP?
@@ -30,4 +31,3 @@ vi.Call2(param_names, param_values,
         True)   # bring LabVIEW to front?
 
 print(param_values)
-

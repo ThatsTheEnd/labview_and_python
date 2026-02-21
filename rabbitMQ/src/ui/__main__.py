@@ -28,4 +28,4 @@ ui.timer(0.1, startup, once=True)
 
 dashboard.build()
 
-ui.run(title="RabbitMQ Demo", port=8080, reload=False, show=True)
+ui.run(title="RabbitMQ Demo", port=8081, reload=False, show=True)

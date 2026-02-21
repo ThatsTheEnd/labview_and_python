@@ -33,5 +33,6 @@ htmlcov/
 
 
 # LabVIEW
-.aliases
+*.aliases
 *.lvlps
+

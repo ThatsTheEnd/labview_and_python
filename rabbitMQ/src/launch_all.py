@@ -49,14 +49,15 @@ async def main() -> int:
         asyncio.create_task(run_module("UI", "ui"), name="ui"),
     ]
     
-    def signal_handler(sig: int) -> None:
+    def signal_handler(sig: int, frame) -> None:
         logger.info(f"Received signal {sig}, cancelling all tasks...")
         for task in tasks:
             task.cancel()
     
-    loop = asyncio.get_event_loop()
-    loop.add_signal_handler(signal.SIGINT, lambda: signal_handler(signal.SIGINT))
-    loop.add_signal_handler(signal.SIGTERM, lambda: signal_handler(signal.SIGTERM))
+    # Use signal.signal() instead of loop.add_signal_handler() for Windows compatibility
+    signal.signal(signal.SIGINT, signal_handler)
+    if sys.platform != "win32":
+        signal.signal(signal.SIGTERM, signal_handler)
     
     try:
         await asyncio.gather(*tasks)
