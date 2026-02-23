@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-from typing import List
-
 import numpy as np
 
 from shared.contracts import RawMeasurement
@@ -36,3 +34,27 @@ def generate_raw_measurement(
         sampling_rate_hz=sampling_rate_hz,
         correlation_id=correlation_id,
     )
+
+
+def generate_signal_for_labview(
+    sampling_rate_hz: float,
+    duration_s: float,
+    fault_enabled: bool):
+    """
+    Simplified wrapper for LabVIEW Python Node.
+    
+    Args:
+        sampling_rate_hz: Sampling rate in Hz
+        duration_s: Duration in seconds
+        fault_enabled: Whether to inject a fault burst
+    
+    Returns:
+        List of signal values (floats)
+    """
+    measurement = generate_raw_measurement(
+        sampling_rate_hz=sampling_rate_hz,
+        duration_s=duration_s,
+        fault_enabled=fault_enabled,
+        correlation_id="labview",
+    )
+    return measurement.values
