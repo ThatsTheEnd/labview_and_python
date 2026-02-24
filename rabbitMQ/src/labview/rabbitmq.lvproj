@@ -12,8 +12,10 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="Example one to two.vi" Type="VI" URL="/&lt;vilib&gt;/Distrio/LabbitMQ/Example one to two.vi"/>
-		<Item Name="generate_signal.vi" Type="VI" URL="../generate_signal.vi"/>
+		<Item Name="support" Type="Folder">
+			<Item Name="Example one to two.vi" Type="VI" URL="/&lt;vilib&gt;/Distrio/LabbitMQ/Example one to two.vi"/>
+			<Item Name="generate_signal.vi" Type="VI" URL="../generate_signal.vi"/>
+		</Item>
 		<Item Name="measurement.vi" Type="VI" URL="../measurement.vi"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
