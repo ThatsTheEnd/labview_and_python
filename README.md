@@ -68,9 +68,9 @@ Control LabVIEW VIs programmatically using the VI Server API via ActiveX.
 **Quick Start:**
 ```bash
 cd PythonToLabVIEW/PYtoLV_VI-Server
-python Call-Method.py
+uv run python Call-Method.py
 # or
-python Call2-Method.py
+uv run python Call2-Method.py
 ```
 
 See [PYtoLV_VI-Server/readme.md](PythonToLabVIEW/PYtoLV_VI-Server/readme.md) for details.
@@ -85,7 +85,8 @@ Call LabVIEW web services via HTTP requests.
 2. Open the LabVIEW project and start the web service
 3. Run:
 ```bash
-python CallLVWebservice.py
+cd PythonToLabVIEW/PYtoLV_HTTP
+uv run python CallLVWebservice.py
 ```
 
 See [PYtoLV_HTTP/readme.md](PythonToLabVIEW/PYtoLV_HTTP/readme.md) for details.
@@ -100,7 +101,8 @@ Network-based communication using TCP sockets.
 2. Run Simple TCP - Server.vi
 3. Run:
 ```bash
-python python-client.py
+cd PythonToLabVIEW/PYtoLV_TCP
+uv run python python-client.py
 ```
 
 See [PYtoLV_TCP/README.md](PythonToLabVIEW/PYtoLV_TCP/README.md) for details.
@@ -141,16 +143,28 @@ Remote procedure call framework for high-performance, language-agnostic communic
 - LabVIEW: Message registration and RPC method bindings
 - Protocol file: [`calculator.proto`](gRPC/calculator.proto)
 
+**Quick Start:**
+```bash
+cd gRPC
+
+# To run Python gRPC server:
+uv run python Server.py
+
+# In another terminal, run Python gRPC client:
+uv run python Client.py
+```
+
 **Code Generation:**
 ```bash
 # To regenerate Python stubs:
-python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. calculator.proto
+cd gRPC
+uv run python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. calculator.proto
 ```
 
 **Demo:**
 Contains a [`Python demo/`](gRPC/Python%20demo/) folder with Python-only reference implementation.
 
-#### **RabbitMQ Integration** ⭐
+#### **RabbitMQ Integration**
 
 Full-featured demo showcasing asynchronous message-based communication with UI, simulator, and analysis modules.
 
@@ -230,17 +244,3 @@ See [`rabbitMQ/README.md`](rabbitMQ/README.md) for complete documentation.
 ### Services
 - **RabbitMQ:** Docker or local installation
 - **gRPC:** Protocol Buffers compiler for regenerating stubs
-
-## 📚 Use Cases
-
-- **Industrial Automation:** LabVIEW hardware control with Python data processing
-- **Test & Measurement:** Real-time acquisition (LabVIEW) + ML analysis (Python)
-- **Distributed Systems:** Multi-node architectures with message-based coordination
-- **Web Integration:** Python-based UI/API layers for LabVIEW systems
-- **Legacy Integration:** Gradual migration paths between LabVIEW and Python codebases
-- **Image Processing:** Computer vision tasks combining LabVIEW acquisition with Python analysis
-
-## 🤝 Contributing
-
-Each subdirectory contains specific examples with their own README files. Refer to those for detailed instructions and best practices.
-
